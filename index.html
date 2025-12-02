@@ -7,10 +7,10 @@
     <style>
         /* ----- 공통 스타일 ----- */
         body {
-            font-family: 'Consolas', 'Courier New', monospace;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212; /* 어두운 배경 */
+            background-color: #111; /* 어두운 해커톤 느낌 */
             color: #e0e0e0;
             line-height: 1.5;
         }
@@ -24,21 +24,16 @@
             margin: 0;
         }
 
-        h1 {
+        /* ----- 제목 ----- */
+        header h1 {
             font-size: 2rem;
             color: #00ffcc;
         }
 
-        h2 {
+        header h2 {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #ffcc00;
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #00ffff;
+            color: #ff33cc; /* 설계하는 개발자 강조 색 */
+            margin-bottom: 2rem;
         }
 
         /* ----- 컨테이너 ----- */
@@ -48,19 +43,32 @@
             padding: 2rem;
         }
 
+        /* ----- 구분선 섹션 ----- */
+        section {
+            margin-bottom: 3rem;
+            padding: 1rem 0;
+        }
+
+        section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+            color: #00cccc;
+        }
+
         /* ----- 기본정보 ----- */
         .basic-info {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem 2rem;
-            margin-bottom: 3rem;
         }
 
         .basic-info div {
             flex: 1 1 200px;
-            background-color: #1e1e1e;
+            background-color: #1b1b1b;
             padding: 0.6rem 1rem;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 0.85rem;
             color: #cfcfcf;
             transition: background 0.3s;
@@ -72,17 +80,13 @@
 
         .basic-info div span.label {
             font-weight: bold;
-            color: #ff6600;
+            color: #00ffcc;
             margin-bottom: 0.2rem;
             display: block;
             font-size: 0.75rem;
         }
 
         /* ----- SW 역량 ----- */
-        .skills {
-            margin-bottom: 3rem;
-        }
-
         .skills ul {
             list-style: none;
             padding-left: 0;
@@ -92,9 +96,9 @@
         }
 
         .skills li {
-            background-color: #1e1e1e;
+            background-color: #1b1b1b;
             padding: 0.8rem 1rem;
-            border-radius: 10px;
+            border-radius: 12px;
             flex: 1 1 280px;
             box-shadow: 0 3px 10px rgba(0,255,255,0.1);
             transition: transform 0.2s;
@@ -107,22 +111,23 @@
 
         /* ----- 프로젝트 ----- */
         .projects {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 2rem;
         }
 
         .project-card {
             background-color: #1b1b1b;
             border-left: 4px solid #00ffcc;
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 1.5rem;
+            width: 100%; /* match parent */
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(0,255,255,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,255,255,0.2);
         }
 
         .project-card h3 {
@@ -134,7 +139,7 @@
         .project-card .role {
             font-weight: bold;
             margin-bottom: 0.7rem;
-            color: #ffcc00;
+            color: #ff66ff;
         }
 
         .project-card .desc {
@@ -152,45 +157,48 @@
 
         /* ----- 반응형 ----- */
         @media (max-width: 800px) {
-            .projects {
-                grid-template-columns: 1fr;
+            .basic-info div {
+                flex: 1 1 100%;
+            }
+
+            .skills li {
+                flex: 1 1 100%;
             }
         }
     </style>
+    <!-- 폰트 임포트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <!-- 제목 -->
-        <header style="margin-bottom:2rem;">
+        <header>
             <h1>김민욱</h1>
             <h2>설계하는 개발자</h2>
         </header>
 
         <!-- 기본정보 -->
-        <section class="basic-info">
-            <div>
-                <span class="label">성명</span>
-                김민욱
-            </div>
-            <div>
-                <span class="label">이메일</span>
-                <a href="mailto:kmwpcpk@gmail.com">kmwpcpk@gmail.com</a>
-            </div>
-            <div>
-                <span class="label">GitHub</span>
-                <a href="https://github.com/kr-uk" target="_blank">github.com/kr-uk</a>
-            </div>
-            <div>
-                <span class="label">학력</span>
-                한동대 컴퓨터공학 (2018.02 - 2025.02)
-            </div>
-            <div>
-                <span class="label">수상</span>
-                우수논문상 동상 (2024.05)
-            </div>
-            <div>
-                <span class="label">자격증</span>
-                정보처리기사, OPIc IM2
+        <section>
+            <h2>기본정보</h2>
+            <div class="basic-info">
+                <div>
+                    <span class="label">성명</span>김민욱
+                </div>
+                <div>
+                    <span class="label">이메일</span><a href="mailto:kmwpcpk@gmail.com">kmwpcpk@gmail.com</a>
+                </div>
+                <div>
+                    <span class="label">GitHub</span><a href="https://github.com/kr-uk" target="_blank">github.com/kr-uk</a>
+                </div>
+                <div>
+                    <span class="label">학력</span>한동대 컴퓨터공학 (2018.02 - 2025.02)
+                </div>
+                <div>
+                    <span class="label">수상</span>우수논문상 동상 (2024.05)
+                </div>
+                <div>
+                    <span class="label">자격증</span>정보처리기사, OPIc IM2
+                </div>
             </div>
         </section>
 
@@ -199,28 +207,22 @@
             <h2>SW 역량</h2>
             <ul>
                 <li>
-                    <h3>Python</h3>
-                    알고리즘 문제 해결 주언어. Chat GPT API 연동 및 로봇팔 제어 프로젝트 경험.
+                    <h3>Python</h3> 알고리즘 문제 해결 주언어. Chat GPT API 연동 및 로봇팔 제어 프로젝트 경험.
                 </li>
                 <li>
-                    <h3>Flutter</h3>
-                    로그인/유저 설정 기능 구현, 페이지뷰, 커스텀 AppBar, 재사용 위젯 설계. Firebase 연동 경험.
+                    <h3>Flutter</h3> 로그인/유저 설정 기능 구현, 페이지뷰, 커스텀 AppBar, 재사용 위젯 설계. Firebase 연동 경험.
                 </li>
                 <li>
-                    <h3>Kotlin</h3>
-                    CRUD 기반 앱 개발. RecyclerView, ViewModel, LiveData 활용 가능.
+                    <h3>Kotlin</h3> CRUD 기반 앱 개발. RecyclerView, ViewModel, LiveData 활용 가능.
                 </li>
                 <li>
-                    <h3>Java</h3>
-                    기본 문법과 객체지향 프로그래밍 이해.
+                    <h3>Java</h3> 기본 문법과 객체지향 프로그래밍 이해.
                 </li>
                 <li>
-                    <h3>Spring Boot</h3>
-                    기본 CRUD 및 간단한 API 구현 가능.
+                    <h3>Spring Boot</h3> 기본 CRUD 및 간단한 API 구현 가능.
                 </li>
                 <li>
-                    <h3>Vue.js</h3>
-                    컴포넌트 구조와 기본 문법 이해. 간단한 화면 구성 가능.
+                    <h3>Vue.js</h3> 컴포넌트 구조와 기본 문법 이해. 간단한 화면 구성 가능.
                 </li>
             </ul>
         </section>
