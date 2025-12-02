@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김민욱 | 설계하는 개발자</title>
+    <style>
+        /* ----- 공통 스타일 ----- */
+        body {
+            font-family: 'Consolas', 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* 어두운 배경 */
+            color: #e0e0e0;
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: #00ffcc;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #00ffcc;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffcc00;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #00ffff;
+        }
+
+        /* ----- 컨테이너 ----- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* ----- 기본정보 ----- */
+        .basic-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .basic-info div {
+            flex: 1 1 200px;
+            background-color: #1e1e1e;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #cfcfcf;
+            transition: background 0.3s;
+        }
+
+        .basic-info div:hover {
+            background-color: #2a2a2a;
+        }
+
+        .basic-info div span.label {
+            font-weight: bold;
+            color: #ff6600;
+            margin-bottom: 0.2rem;
+            display: block;
+            font-size: 0.75rem;
+        }
+
+        /* ----- SW 역량 ----- */
+        .skills {
+            margin-bottom: 3rem;
+        }
+
+        .skills ul {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skills li {
+            background-color: #1e1e1e;
+            padding: 0.8rem 1rem;
+            border-radius: 10px;
+            flex: 1 1 280px;
+            box-shadow: 0 3px 10px rgba(0,255,255,0.1);
+            transition: transform 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .skills li:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ----- 프로젝트 ----- */
+        .projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: #1b1b1b;
+            border-left: 4px solid #00ffcc;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0,255,255,0.2);
+        }
+
+        .project-card h3 {
+            color: #00ffcc;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .project-card .role {
+            font-weight: bold;
+            margin-bottom: 0.7rem;
+            color: #ffcc00;
+        }
+
+        .project-card .desc {
+            font-size: 0.9rem;
+            color: #cfcfcf;
+        }
+
+        /* ----- Footer ----- */
+        footer {
+            text-align: center;
+            margin: 4rem 0 2rem 0;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        /* ----- 반응형 ----- */
+        @media (max-width: 800px) {
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 제목 -->
+        <header style="margin-bottom:2rem;">
+            <h1>김민욱</h1>
+            <h2>설계하는 개발자</h2>
+        </header>
+
+        <!-- 기본정보 -->
+        <section class="basic-info">
+            <div>
+                <span class="label">성명</span>
+                김민욱
+            </div>
+            <div>
+                <span class="label">이메일</span>
+                <a href="mailto:kmwpcpk@gmail.com">kmwpcpk@gmail.com</a>
+            </div>
+            <div>
+                <span class="label">GitHub</span>
+                <a href="https://github.com/kr-uk" target="_blank">github.com/kr-uk</a>
+            </div>
+            <div>
+                <span class="label">학력</span>
+                한동대 컴퓨터공학 (2018.02 - 2025.02)
+            </div>
+            <div>
+                <span class="label">수상</span>
+                우수논문상 동상 (2024.05)
+            </div>
+            <div>
+                <span class="label">자격증</span>
+                정보처리기사, OPIc IM2
+            </div>
+        </section>
+
+        <!-- SW 역량 -->
+        <section class="skills">
+            <h2>SW 역량</h2>
+            <ul>
+                <li>
+                    <h3>Python</h3>
+                    알고리즘 문제 해결 주언어. Chat GPT API 연동 및 로봇팔 제어 프로젝트 경험.
+                </li>
+                <li>
+                    <h3>Flutter</h3>
+                    로그인/유저 설정 기능 구현, 페이지뷰, 커스텀 AppBar, 재사용 위젯 설계. Firebase 연동 경험.
+                </li>
+                <li>
+                    <h3>Kotlin</h3>
+                    CRUD 기반 앱 개발. RecyclerView, ViewModel, LiveData 활용 가능.
+                </li>
+                <li>
+                    <h3>Java</h3>
+                    기본 문법과 객체지향 프로그래밍 이해.
+                </li>
+                <li>
+                    <h3>Spring Boot</h3>
+                    기본 CRUD 및 간단한 API 구현 가능.
+                </li>
+                <li>
+                    <h3>Vue.js</h3>
+                    컴포넌트 구조와 기본 문법 이해. 간단한 화면 구성 가능.
+                </li>
+            </ul>
+        </section>
+
+        <!-- 프로젝트 -->
+        <section class="projects">
+            <h2>프로젝트 경험</h2>
+
+            <div class="project-card">
+                <h3>자연어 로봇팔 제어 (2023.07 - 2024.06)</h3>
+                <p class="role">역할: Chat GPT API 연동 및 프롬포트 엔지니어링 | 3명</p>
+                <p class="desc">Python으로 로봇팔 제어와 자연어 처리 구현. Chat GPT API 활용 명령 키워드 추출, 프롬포트 엔지니어링으로 정확도 향상. Pick & Place 작업 수행.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Itto 데이팅 앱 (2025.02 - 진행중)</h3>
+                <p class="role">역할: 로그인 및 유저 관리 | 3명</p>
+                <p class="desc">Flutter & Firebase 기반 위치 기반 데이팅 앱. 로그인, 본인인증, 프로필 설정 구현. 서비스 설계와 유지보수성을 고려하며, 기능 개발 전 설계의 중요성을 깨달음.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 김민욱. All rights reserved.
+    </footer>
+</body>
+</html>
